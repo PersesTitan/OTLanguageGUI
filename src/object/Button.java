@@ -6,13 +6,21 @@ import javax.swing.*;
 
 public class Button implements Create {
 
+    private JButton button;
+
+    @Override
+    public void setText(String text) {
+        if (button == null) throw new NullPointerException(buttonNull);
+        this.button.setText(text);
+    }
+
     @Override
     public void create(String text) {
-        JButton button = new JButton(text);
+        this.button = new JButton(text);
     }
 
     @Override
     public void create() {
-        JButton button = new JButton();
+        this.button = new JButton();
     }
 }
