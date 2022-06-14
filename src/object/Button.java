@@ -6,14 +6,13 @@ import javax.swing.*;
 
 public class Button implements Create {
 
-
     @Override
-    public void crate(String text) {
+    public void create(String text) {
         JButton button = new JButton(text);
     }
 
     @Override
-    public void crate() {
+    public void create() {
         JButton button = new JButton();
     }
 }
