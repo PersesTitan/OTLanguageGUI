@@ -7,12 +7,12 @@ import javax.swing.*;
 public class Frame implements Create {
 
     @Override
-    public void crate(String text) {
+    public void create(String text) {
         JFrame frame = new JFrame(text);
     }
 
     @Override
-    public void crate() {
+    public void create() {
         JFrame frame = new JFrame();
     }
 }
