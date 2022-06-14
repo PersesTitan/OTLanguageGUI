@@ -1,6 +1,6 @@
 package inf;
 
 public interface Create {
-    void crate(String text);
-    void crate();
+    void create(String text);
+    void create();
 }
