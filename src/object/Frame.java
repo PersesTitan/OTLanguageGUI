@@ -3,9 +3,11 @@ package object;
 import inf.Create;
 
 import javax.swing.*;
+import java.util.regex.Pattern;
 
 public class Frame implements Create {
-
+    private final static String PATTERN = "(^|\\s+|\\n)ㄱㅍㄱ(\\s+|$)";
+    private final static Pattern pattern = Pattern.compile(PATTERN);
     private JFrame frame;
 
     @Override
@@ -22,5 +24,10 @@ public class Frame implements Create {
     @Override
     public void create() {
         this.frame = new JFrame();
+    }
+
+    @Override
+    public boolean check(String line) {
+        return pattern.matcher(line).find();
     }
 }
