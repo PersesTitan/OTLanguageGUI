@@ -3,9 +3,11 @@ package object;
 import inf.Create;
 
 import javax.swing.*;
+import java.util.regex.Pattern;
 
 public class Label implements Create {
-
+    private final static String PATTERN = "(^|\\s+|\\n)ㄱㄹㄱ(\\s+|$)";
+    private final static Pattern pattern = Pattern.compile(PATTERN);
     private JLabel label;
 
     @Override
@@ -22,5 +24,10 @@ public class Label implements Create {
     @Override
     public void create() {
         label = new JLabel();
+    }
+
+    @Override
+    public boolean check(String line) {
+        return pattern.matcher(line).find();
     }
 }
