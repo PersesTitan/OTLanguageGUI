@@ -3,9 +3,11 @@ package object;
 import inf.Create;
 
 import javax.swing.*;
+import java.util.regex.Pattern;
 
 public class Button implements Create {
-
+    private final static String PATTERN = "(\\n|^|\\s+)ㄱㅂㄱ($|\\s+)";
+    private final static Pattern pattern = Pattern.compile(PATTERN);
     private JButton button;
 
     @Override
@@ -22,5 +24,10 @@ public class Button implements Create {
     @Override
     public void create() {
         this.button = new JButton();
+    }
+
+    @Override
+    public boolean check(String line) {
+        return pattern.matcher(line).find();
     }
 }
