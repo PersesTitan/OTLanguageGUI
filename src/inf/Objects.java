@@ -3,10 +3,10 @@ package inf;
 import object.*;
 
 public interface Objects {
-    Button button = new Button();
-    CheckBox checkBox = new CheckBox();
-    Frame frame = new Frame();
-    Label label = new Label();
-    PasswordField passwordField = new PasswordField();
-    TextField textField = new TextField();
+    Create button = new Button();
+    Create checkBox = new CheckBox();
+    Create frame = new Frame();
+    Create label = new Label();
+    Create passwordField = new PasswordField();
+    Create textField = new TextField();
 }
