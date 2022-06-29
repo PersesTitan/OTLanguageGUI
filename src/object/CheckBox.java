@@ -3,9 +3,11 @@ package object;
 import inf.Create;
 
 import javax.swing.*;
+import java.util.regex.Pattern;
 
 public class CheckBox implements Create {
-
+    private final static String PATTERN = "(^|\\n|\\s+)ㄱㅊㄱ($|\\s+)";
+    private final static Pattern pattern = Pattern.compile(PATTERN);
     private JCheckBox checkBox;
 
     @Override
@@ -22,5 +24,10 @@ public class CheckBox implements Create {
     @Override
     public void create() {
         this.checkBox = new JCheckBox();
+    }
+
+    @Override
+    public boolean check(String line) {
+        return pattern.matcher(line).find();
     }
 }
